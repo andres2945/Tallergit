@@ -1,38 +1,23 @@
 # Tallergit
-def calcular_tarifa_hora(gastos_mensuales, horas_trabajadas_mes, margen_ganancia):
-    """
-    Calcula la tarifa por hora recomendada para un freelancer.
+# Calculadora de Presupuesto Freelance
 
-    :param gastos_mensuales: Total de gastos mensuales (float)
-    :param horas_trabajadas_mes: Horas trabajadas al mes (float)
-    :param margen_ganancia: Porcentaje de ganancia deseado (float)
-    :return: Tarifa por hora recomendada (float)
-    """
-    if horas_trabajadas_mes <= 0:
-        raise ValueError("Las horas trabajadas deben ser mayores a 0")
+Herramienta en Python que permite calcular cuánto deberías cobrar por hora como freelancer en base a:
 
-    costo_base_por_hora = gastos_mensuales / horas_trabajadas_mes
-    tarifa_final = costo_base_por_hora * (1 + margen_ganancia / 100)
+- Gastos mensuales
+- Horas trabajadas al mes
+- Margen de ganancia deseado
 
-    return tarifa_final
+## Cómo usar
 
+1. Clona el repositorio:
+   git clone https://github.com/tuusuario/calculadora-presupuesto-freelance.git
 
-def main():
-    print("=== CALCULADORA DE PRESUPUESTO FREELANCE ===\n")
+2. Entra al proyecto:
+   cd calculadora-presupuesto-freelance
 
-    try:
-        gastos = float(input("Ingresa tus gastos mensuales totales: "))
-        horas = float(input("Ingresa cuántas horas trabajas al mes: "))
-        margen = float(input("Ingresa el porcentaje de ganancia deseado (%): "))
+3. Ejecuta el programa:
+   python main.py
 
-        tarifa = calcular_tarifa_hora(gastos, horas, margen)
+## Fórmula utilizada
 
-        print("\n--- RESULTADO ---")
-        print(f"Tarifa recomendada por hora: ${tarifa:.2f}")
-
-    except ValueError as e:
-        print(f"Error: {e}")
-
-
-if __name__ == "__main__":
-    main()
+Tarifa por hora = (Gastos mensuales / Horas trabajadas) × (1 + margen/100)
